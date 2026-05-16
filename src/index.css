@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Configure dark mode to use the .dark class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Ensure background color transitions smoothly */
+html, body {
+  margin: 0;
+  padding: 0;
+}
