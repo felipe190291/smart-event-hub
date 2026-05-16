@@ -166,7 +166,15 @@ export const EventDetailsPage = () => {
           <div className="overflow-hidden rounded-[2.5rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-2xl">
             <div className="aspect-video relative bg-slate-100 dark:bg-slate-800">
               {event.image_url ? (
-                <img src={event.image_url} alt={event.title} className="h-full w-full object-cover" />
+                <img 
+                  src={event.image_url} 
+                  alt={event.title} 
+                  className="h-full w-full object-cover" 
+                  onError={(e) => { 
+                    e.currentTarget.onerror = null; 
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop'; 
+                  }}
+                />
               ) : (
                 <div className="flex h-full w-full items-center justify-center">
                   <ImageIcon size={64} className="text-slate-300 dark:text-slate-700" />

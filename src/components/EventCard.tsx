@@ -79,6 +79,10 @@ export const EventCard = ({ event, onUpdate }: EventCardProps) => {
               src={event.image_url}
               alt={event.title}
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              onError={(e) => { 
+                e.currentTarget.onerror = null; 
+                e.currentTarget.src = 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop'; 
+              }}
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center">
